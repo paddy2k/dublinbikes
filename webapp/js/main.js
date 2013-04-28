@@ -1,3 +1,12 @@
+/*!
+ * Dublin Bikes 2 Go! v3.5
+ * www.dublinbikes2go.com 
+ *
+ * Copyright (c) Paddy O'Reilly
+ * Available under the GNU Public Licence V3
+ * http://www.gnu.org/licenses/gpl-3.0.html
+ */
+
 var stations = new Storage( 'stations',
                             function(station){
                               return new Station(station);
