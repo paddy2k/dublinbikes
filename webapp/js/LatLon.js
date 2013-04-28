@@ -24,7 +24,7 @@ LatLon.prototype.distanceTo = function (point, precision) {
 
   if(!this.getCache(key)){
     if (typeof precision == "undefined") {
-        precision = 6
+        precision = 7
     }
     var R = this._radius;
     var lat1 = this._lat.toRad(),

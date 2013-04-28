@@ -4,9 +4,10 @@ var THC = THC || {
   events: [],
   init: function(fallback){
     var _this = this;
+    var prefix = "thc_";
 
     window.addEventListener('hashchange', function(event){
-      var hash = _this.cleanHash(window.location.hash), returned = false;
+      var hash = _this.cleanHash(window.location.hash), returned = false, classList;
 
       _this.events.forEach(function(event){
         var returnOK = false;
@@ -26,19 +27,24 @@ var THC = THC || {
         }
       });
 
+      // Add/remove classes based on path
+      classList = document.body.className.match(new RegExp(prefix + '\\w+', 'g')) || [];
+      classList.forEach(function(className){
+        document.body.classList.remove(className);
+      });
+      hash.forEach(function(className){
+        document.body.classList.add(prefix + className);
+      });
+
       if(!returned && fallback){
         window.location.hash = fallback;
       }
-
     }, false);
 
     // Trigger event for hash on load
     var temp = this.cleanHash(window.location.hash);
-    window.location.hash = '';
-    // Set new hash asyncronously, otherwise it'll fire the callback twice
-    setTimeout(function(){
-      window.location.hash+=  "!"+temp.join('/');
-    }, 0);
+    window.location.hash = '!';
+    window.location.hash+=  temp.join('/');
   },
 
   on: function(hash, callback){

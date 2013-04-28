@@ -73,36 +73,6 @@ Util.ready(function(){
 
     document.getElementById('main').innerHTML = "";
     document.getElementById('main').appendChild(ul);
-
-    if("mozNotification" in navigator){
-      var notification = navigator.mozNotification;
-      var n = notification.createNotification(station.name, station.bikes + " bike available");
-      setTimeout(function(){
-        n.show();
-      }, 5000);
-    }
-    else if("webkitNotifications" in window){
-      var createNotificationInstance = function (options) {
-        if (options.notificationType === 'simple') {
-          return window.webkitNotifications.createNotification(
-            'http://dublinbikes2go.com/apple-touch-icon.png',
-            station.name,
-            station.bikes + " bikes available"
-          );
-        } else if (options.notificationType === 'html') {
-          return window.webkitNotifications.createHTMLNotification('http://damienklinnert.de');
-        }
-      };
-
-      if (window.webkitNotifications.checkPermission() == 0) {
-        createNotificationInstance({notificationType:'simple'}).show();
-      } else {
-        window.webkitNotifications.requestPermission(function () {
-          createNotificationInstance({notificationType:'simple'}).show();
-        });
-      }
-    }
-
   });
 
   THC.init();
