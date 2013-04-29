@@ -1,4 +1,4 @@
-Dublin Bikes 2 Go!
+dublinbikes
 ===========
 
 HTML5 based Dublin Bikes webapp
