@@ -1,13 +1,15 @@
 /*!
  * Dublin Bikes 2 Go! v3.5
- * www.dublinbikes2go.com 
+ * http://dublinbikes2go.com
  *
- * Copyright (c) Paddy O'Reilly
- * Available under the GNU Public Licence V3
+ * Copyright (c) 2009, 2013 Paddy O'Reilly
+ * Released under the GNU Public Licence V3
  * http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * Date: 29-04-2013
  */
 
-var stations = new Storage( 'stations',
+var stations = new Poca( 'stations',
                             function(station){
                               return new Station(station);
                             });

@@ -1,15 +1,15 @@
+/*!
+ * DB2Go Utilities
+ *
+ * Copyright (c) 2009, 2013 Paddy O'Reilly
+ * Released under the GNU Public Licence V3
+ * http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * Date: 29-04-2013
+ */
+
 var Util = Util || {
   prefixes : ["webkit", "moz", "ms", "O", ""],
-  // get : function(url, callback){
-  //   var request = new XMLHttpRequest();
-  //   request.open("GET", url, true);
-  //   request.onreadystatechange = function(){
-  //     if(request.readyState === 4 && request.status === 200) {
-  //       callback(request.response);
-  //     }
-  //   };
-  //   request.send(null);
-  // },
   prefix : function(node, attribute, style){
     attribute = attribute.charAt(0).toUpperCase() + attribute.substr(1);
 

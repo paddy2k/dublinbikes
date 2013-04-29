@@ -1,4 +1,15 @@
-var Storage = function(name, prototype){
+/*!
+ * Poca - v0.1
+ * A simple HTML5 object storage
+ *
+ * Copyright (c) 2009, 2013 Paddy O'Reilly
+ * Released under the GNU Public Licence V3
+ * http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * Date: 29-04-2013
+ */
+
+var Poca = function(name, prototype){
   // If no prototype provided, provide fake passthru
   prototype = prototype || function(item){return item;};
 
@@ -32,7 +43,7 @@ var Storage = function(name, prototype){
 }
 
 // Save the content of this to local storage outside asyncronously
-Storage.prototype.save = function(){
+Poca.prototype.save = function(){
   var _this = this;
 
   setTimeout(function(){
@@ -45,7 +56,7 @@ Storage.prototype.save = function(){
 }
 
 // Set a new item with the correct prototype to this and save
-Storage.prototype.set = function(name, object, unsaved){
+Poca.prototype.set = function(name, object, unsaved){
   this[name] = this.getPrototype()(object);
   if(!unsaved){    
     this.save();
@@ -53,7 +64,7 @@ Storage.prototype.set = function(name, object, unsaved){
   return this[name];
 }
 
-Storage.prototype.get = function(filter, sort, limit){
+Poca.prototype.get = function(filter, sort, limit){
   var response = [];
   filter = filter || function(){return true};
 
@@ -82,7 +93,7 @@ Storage.prototype.get = function(filter, sort, limit){
 }
 
 // Wipe the storage object
-Storage.prototype.reset = function(){
+Poca.prototype.reset = function(){
   this.each(function(item){
     delete item;
   });
@@ -90,7 +101,7 @@ Storage.prototype.reset = function(){
 }
 
 // Loop through all the valid items
-Storage.prototype.each = function(callback){
+Poca.prototype.each = function(callback){
   for(var item in this){
     if(this.hasOwnProperty(item) && !this.__lookupGetter__(item)){
       callback(this[item], item);
