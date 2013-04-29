@@ -1,0 +1,13 @@
+{
+  "name": "Dublin Bikes 2 Go",
+  "description": "Dublin Bikes information for all mobile phones",
+  "launch_path": "/dublinbikes/webapp/#!station/3",
+  "icons": {
+    "128": "http://dublinbikes2go.com/apple-touch-icon.png"
+  },
+  "developer": {
+    "name": "Paddy O'Reilly",
+    "url": "http://github.com/paddy2k"
+  },
+  "default_locale": "en"
+}

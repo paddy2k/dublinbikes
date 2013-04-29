@@ -1,0 +1,19 @@
+CACHE MANIFEST
+# v0.6
+NETWORK:
+*
+
+CACHE:
+# Pages
+index.html
+
+# JavaScript
+Geo.js
+LatLon.js
+socketHandlers.js
+Station.js
+THC.js
+main.js
+socket.io.js
+Poca.js
+Util.js
