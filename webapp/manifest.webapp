@@ -9,5 +9,6 @@
     "name": "Paddy O'Reilly",
     "url": "http://github.com/paddy2k"
   },
-  "default_locale": "en"
+  "default_locale": "en",
+  "appcache_path": "/cache.manifest"
 }
