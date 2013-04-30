@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# v0.6
+# v0.7
 NETWORK:
 *
 
@@ -8,12 +8,15 @@ CACHE:
 index.html
 
 # JavaScript
-Geo.js
-LatLon.js
-socketHandlers.js
-Station.js
-THC.js
-main.js
-socket.io.js
-Poca.js
-Util.js
+js/Geo.js
+js/LatLon.js
+js/socketHandlers.js
+js/Station.js
+js/THC.js
+js/main.js
+js/socket.io.js
+js/Poca.js
+js/Util.js
+
+# Styles
+css/style.css

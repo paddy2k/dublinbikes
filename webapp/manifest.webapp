@@ -1,7 +1,7 @@
 {
   "name": "Bikes 2 Go",
   "description": "Dublin Bikes information for all mobile phones",
-  "launch_path": "/  #!station/3",
+  "launch_path": "/#!station/3",
   "icons": {
     "128": "/images/128.png",
     "64": "/images/64.png",
