@@ -2,7 +2,7 @@
  * Total Hashchange Control (THC) - v0.1
  * Hashchange Event Managment Package
  *
- * Copyright (c) 2009, 2013 Paddy O'Reilly
+ * Copyright (c) 2013 Paddy O'Reilly
  * Released under the GNU Public Licence V3
  * http://www.gnu.org/licenses/gpl-3.0.html
  *
