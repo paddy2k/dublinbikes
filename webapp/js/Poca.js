@@ -17,7 +17,7 @@ var Poca = function(name, prototype){
   var store = JSON.parse(localStorage[name] || "{}");
   // Apply prototype to items and save to this
   for(var item in store){
-    if(store.hasOwnProperty(item) && !this.__lookupGetter__(item)){
+    if(store.hasOwnProperty(item) && !!Object.getOwnPropertyDescriptor(this, item)){
       this[item] = prototype(store[item]);
     }
   }
@@ -105,7 +105,7 @@ Poca.prototype.reset = function(){
 // Loop through all the valid items
 Poca.prototype.each = function(callback){
   for(var item in this){
-    if(this.hasOwnProperty(item) && !this.__lookupGetter__(item)){
+    if(this.hasOwnProperty(item) && !Object.getOwnPropertyDescriptor(this, item)){
       callback(this[item], item);
     }
   }
