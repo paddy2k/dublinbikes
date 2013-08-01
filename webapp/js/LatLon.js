@@ -1,20 +1,21 @@
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 /*  Latitude/longitude spherical geodesy formulae & scripts (c) Chris Veness 2002-2010            */
 function LatLon(lat, lon, rad) {
-  var cache = {};
+  window['LatLonCache'] = window['LatLonCache'] || {};
   rad = rad || 6371;
       
   this._lat = lat;
   this._lon = lon;
   this._radius = rad;
 
-  this.__proto__.setCache = function(key, value){
-    cache[key] = value;
-  }
+}
 
-  this.__proto__.getCache = function(key){
-    return cache[key];
-  }
+LatLon.prototype.setCache = function(key, value){
+  window['LatLonCache'][key] = value;
+}
+
+LatLon.prototype.getCache = function(key){
+  return window['LatLonCache'][key];
 }
 LatLon.prototype.distanceTo = function (point, precision) {
   var type = "d";
