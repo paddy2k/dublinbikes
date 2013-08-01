@@ -24,12 +24,14 @@ var Poca = function(name, prototype){
   delete store; // Object no longer needed
 
   // Return a count of the real objects in storage
-  this.__defineGetter__("length", function(){
-    var length = 0;
-    this.each(function(){
-      length++;
-    });
-    return length;
+  Object.defineProperty(this, 'length', {
+    get: function(){
+      var length = 0;
+      this.each(function(){
+        length++;
+      });
+      return length;
+    }
   });
  
   this.getName = function(){
