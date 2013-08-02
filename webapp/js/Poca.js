@@ -105,7 +105,7 @@ Poca.prototype.reset = function(){
 // Loop through all the valid items
 Poca.prototype.each = function(callback){
   for(var item in this){
-    if(this.hasOwnProperty(item) && !Object.getOwnPropertyDescriptor(this, item)){
+    if(this.hasOwnProperty(item)){
       callback(this[item], item);
     }
   }
