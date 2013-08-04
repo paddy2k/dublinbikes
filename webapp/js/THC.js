@@ -37,7 +37,7 @@ var THC = THC || {
       });
 
       // Add/remove classes based on path
-      classList = document.body.className.match(new RegExp(prefix + '\\w+', 'g')) || [];
+      classList = document.body.className.match(new RegExp(prefix + '\\w*', 'g')) || [];
       classList.forEach(function(className){
         document.body.classList.remove(className);
       });
