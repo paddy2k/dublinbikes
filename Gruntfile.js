@@ -197,42 +197,36 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        cssmin: {
-            // This task is pre-configured if you do not wish to use Usemin
-            // blocks for your CSS. By default, the Usemin block from your
-            // `index.html` will take care of minification, e.g.
-            //
-            //     <!-- build:css({.tmp,app}) styles/main.css -->
-            //
-            // dist: {
-            //     files: {
-            //         '<%= yeoman.dist %>/styles/main.css': [
-            //             '.tmp/styles/{,*/}*.css',
-            //             '<%= yeoman.app %>/styles/{,*/}*.css'
-            //         ]
-            //     }
-            // }
-        },
         htmlmin: {
-            dist: {
-                options: {
-                    /*removeCommentsFromCDATA: true,
-                    // https://github.com/yeoman/grunt-usemin/issues/44
-                    //collapseWhitespace: true,
-                    collapseBooleanAttributes: true,
-                    removeAttributeQuotes: true,
-                    removeRedundantAttributes: true,
-                    useShortDoctype: true,
-                    removeEmptyAttributes: true,
-                    removeOptionalTags: true*/
-                },
-                files: [{
-                    expand: true,
-                    cwd: '<%= yeoman.app %>',
-                    src: '*.html',
-                    dest: '<%= yeoman.dist %>'
-                }]
-            }
+          dist: {
+            options: {
+              // removeAttributeQuotes: true,
+              // // removeOptionalTags: true,
+              //removeEmptyElements: true,
+              removeRedundantAttributes: true,
+              useShortDoctype: true,
+              removeEmptyAttributes: true,
+              collapseBooleanAttributes: true,
+            },
+            files: [{
+              expand: true,
+              cwd: '<%= yeoman.app %>',
+              src: '{,*/}*.html',
+              dest: '<%= yeoman.dist %>'
+            }]
+          },
+          deploy: {
+            options: {
+              collapseWhitespace: true,
+              removeComments: true
+            },
+            files: [{
+              expand: true,
+              cwd: '<%= yeoman.dist %>',
+              src: '{,*/}*.html',
+              dest: '<%= yeoman.dist %>'
+            }]
+          }
         },
         // Put files not handled in other tasks here
         copy: {
@@ -315,7 +309,9 @@ module.exports = function (grunt) {
         'uglify',
         'copy:dist',
         'rev',
-        'usemin'
+        'htmlmin:dist',
+        'usemin',
+        'htmlmin:deploy'
     ]);
 
     grunt.registerTask('default', [

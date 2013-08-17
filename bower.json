@@ -1,8 +1,10 @@
 {
   "name": "dublin-bikes-2-go",
   "version": "4.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "intel-appframework": "~2.0.0"
+  },
   "devDependencies": {
-  	"jquery": "1.10.2"
+    "jquery": "1.10.2"
   }
 }
