@@ -10,7 +10,9 @@
 
 Util.ready(function(){
   // Open Socket to NodeServer
-  socket = io.connect('http://dublinbikes2go.com:8000').
+  socket = io.connect('http://dublinbikes2go.com:8000', {
+     transports: ['jsonp-polling']
+  }).
     on('all-stations', function (stationList) {
       // Refresh all stations based on latest from server
       for(var id in stationList){

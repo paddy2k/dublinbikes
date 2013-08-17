@@ -14,6 +14,7 @@ var THC = THC || {
   init: function(fallback){
     var _this = this;
     var prefix = "thc_";
+    fallback = fallback || '';
 
     window.addEventListener('hashchange', function(event){
       var hash = _this.cleanHash(window.location.hash), returned = false, classList;
@@ -23,7 +24,7 @@ var THC = THC || {
         var current = hash.slice(0);
         var target = event.hash.slice(0);
 
-        target.forEach(function(targetChunk, b, c){
+        target.forEach(function(targetChunk){
            var currentChunk = current.shift();
            if(currentChunk == targetChunk){
              returnOK = returned = true;
@@ -64,6 +65,6 @@ var THC = THC || {
     while(hash.match(/^(#|!)/)){
       hash = hash.replace(/^(#|!)/, '')
     } 
-    return hash.split('/');
+    return hash.split('/') || Array();
   }
 }

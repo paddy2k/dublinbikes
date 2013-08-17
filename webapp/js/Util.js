@@ -23,6 +23,19 @@ var Util = Util || {
   },
   ready : function(readyFunction){
     document.addEventListener('DOMContentLoaded', readyFunction);
+  }, 
+  classChange: function(route){
+    var classList, prefix = "_";
+    var hash = route.split('/');
+    alert(hash);
+    console.log(hash);
+    classList = document.body.className.match(new RegExp(prefix + '\\w*', 'g')) || [];
+    classList.forEach(function(className){
+      document.body.classList.remove(className);
+    });
+    hash.forEach(function(className){
+      document.body.classList.add(prefix + className);
+    });
   }
 };
 

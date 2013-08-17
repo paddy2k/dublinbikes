@@ -1,0 +1,8 @@
+{
+  "name": "dublin-bikes-2-go",
+  "version": "4.0.0",
+  "dependencies": {},
+  "devDependencies": {
+  	"jquery": "1.10.2"
+  }
+}
