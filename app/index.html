@@ -3,12 +3,11 @@
 <!--- <html lang="en" manifest="cache.manifest"> -->
 <head>
   <title>Storage Demo</title>
-  
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-  <script type="text/javascript" src="js/lib/routie.js"></script>
-
+  <!-- build:js js/main.js -->
   <script type="text/javascript" src="js/Station.js"></script>
   <script type="text/javascript" src="js/Util.js"></script>
   <script type="text/javascript" src="js/Poca.js"></script>
@@ -17,8 +16,11 @@
   <script type="text/javascript" src="js/socket.io.js"></script>
   <script type="text/javascript" src="js/socketHandlers.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
+  <!-- endbuild -->
 
+  <!-- build:css(.tmp) css/main.css -->
   <link media="all" href="css/style.css" type="text/css" rel="stylesheet" />
+  <!-- endbuild -->
 </head>
 <body>
   <a id="loadNearest" href="#!nearest">Load Nearest</a>
@@ -26,7 +28,7 @@
   <button id="install">
     Install this awesome app on your homescreen!
   </button>
-    
+
   <script>
   (function(){
     function install(ev) {
