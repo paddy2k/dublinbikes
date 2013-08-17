@@ -11,7 +11,7 @@
 Util.ready(function(){
   // Open Socket to NodeServer
   socket = io.connect('http://dublinbikes2go.com:8000', {
-     transports: ['jsonp-polling']
+     transports: ['websocket', 'jsonp-polling']
   }).
     on('all-stations', function (stationList) {
       // Refresh all stations based on latest from server

@@ -1,6 +1,6 @@
 {
   "name": "dublin-bikes-2-go",
-  "version": "4.0.0",
+  "version": "3.5.0",
   "description": "A mobile webapp of Dublin Bikes information",
   "main": "index.html",
   "devDependencies": {
