@@ -1,7 +1,6 @@
 {
   "name": "Bikes 2 Go",
   "description": "Dublin Bikes information for all mobile phones",
-  "launch_path": "/#!station/3",
   "icons": {
     "128": "/images/128.png",
     "64": "/images/64.png",
@@ -11,8 +10,17 @@
   },
   "developer": {
     "name": "Paddy O'Reilly",
-    "url": "http://github.com/paddy2k"
+    "url": "http://twitter.com/paddy2k"
   },
+  "size": 12300,
   "default_locale": "en",
-  "appcache_path": "/cache.manifest"
+  "appcache_path": "/appcache.manifest",
+  "permissions" : {
+    "geolocation":{
+      "description" : "Required to find nearest station"
+    },
+    "storage": {
+      "description": "Required for offline functionality"
+    }
+  }
 }
