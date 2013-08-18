@@ -5,10 +5,10 @@
  * Copyright (c) 2013 Paddy O'Reilly
  * Released under the GNU Public Licence V3
  * http://www.gnu.org/licenses/gpl-3.0.html
- * 
+ *
  * Date: 29-04-2013
  */
- 
+
 var THC = THC || {
   events: [],
   init: function(fallback){
@@ -52,9 +52,11 @@ var THC = THC || {
     }, false);
 
     // Trigger event for hash on load
-    var temp = this.cleanHash(window.location.hash);
-    window.location.hash = '!';
-    window.location.hash+=  temp.join('/');
+    setTimeout(function(){
+      var temp = _this.cleanHash(window.location.hash);
+      window.location.hash = '!';
+      window.location.hash+=  temp.join('/');
+    }, 0);
   },
 
   on: function(hash, callback){
@@ -64,7 +66,7 @@ var THC = THC || {
   cleanHash: function(hash){
     while(hash.match(/^(#|!)/)){
       hash = hash.replace(/^(#|!)/, '')
-    } 
+    }
     return hash.split('/') || Array();
   }
 }

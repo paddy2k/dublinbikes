@@ -1,4 +1,4 @@
-/*!
+  /*!
  * Poca - v0.1
  * A simple HTML5 object storage
  *
@@ -17,7 +17,8 @@ var Poca = function(name, prototype){
   var store = JSON.parse(localStorage[name] || "{}");
   // Apply prototype to items and save to this
   for(var item in store){
-    if(store.hasOwnProperty(item) && !!Object.getOwnPropertyDescriptor(this, item)){
+    if(store[item]){
+//    if(store.hasOwnProperty(store[item]) && !!Object.getOwnPropertyDescriptor(this, store[item])){
       this[item] = prototype(store[item]);
     }
   }
@@ -33,7 +34,7 @@ var Poca = function(name, prototype){
       return length;
     }
   });
- 
+
   this.getName = function(){
     return name;
   }
@@ -51,7 +52,7 @@ Poca.prototype.save = function(){
   setTimeout(function(){
     // return 'string' === typeof (localStorage[name] = JSON.stringify(this))
     // localStorage[name] = JSON.stringify(this); // throws cyclic error
-    
+
     localStorage[_this.getName()] = JSON.stringify(_this);
   }, 0);
   return this;
@@ -60,7 +61,7 @@ Poca.prototype.save = function(){
 // Set a new item with the correct prototype to this and save
 Poca.prototype.set = function(name, object, unsaved){
   this[name] = this.getPrototype()(object);
-  if(!unsaved){    
+  if(!unsaved){
     this.save();
   }
   return this[name];

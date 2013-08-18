@@ -52,10 +52,11 @@ Util.ready(function(){
     document.getElementById('main').appendChild(ul);
   });
   THC.on('station', function(data){
-    var station = stations[data[0]];
+    var station_id = data[0];
+    var station = stations[station_id];
 
     var ul = document.createElement('ul');
-    ul.className="station"+station.id;
+    ul.className="station" + station.id;
 
     var name = document.createElement('li');
     name.textContent = station.name;
