@@ -273,6 +273,27 @@ module.exports = function (grunt) {
             all: {
                 rjsConfig: '<%= yeoman.app %>/js/main.js'
             }
+        },
+        manifest: {
+          generate: {
+            options: {
+              basePath: "<%= yeoman.dist %>",
+              network: [
+                "http://*",
+                "https://*"
+              ],
+              preferOnline: false,
+              verbose: true,
+              timestamp: true
+            },
+            src: [
+              "*.html",
+              "js/*.js",
+              "css/*.css",
+              "images/*"
+            ],
+            dest: "<%= yeoman.dist %>/manifest.appcache"
+          }
         }
     });
 
@@ -311,7 +332,8 @@ module.exports = function (grunt) {
         'rev',
         'htmlmin:dist',
         'usemin',
-        'htmlmin:deploy'
+        'htmlmin:deploy',
+        'manifest'
     ]);
 
     grunt.registerTask('default', [
