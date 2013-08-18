@@ -51,8 +51,8 @@ Util.ready(function(){
     document.getElementById('main').innerHTML = "";
     document.getElementById('main').appendChild(ul);
   });
-  THC.on('station', function(){
-    var station = stations[id];
+  THC.on('station', function(data){
+    var station = stations[data[0]];
 
     var ul = document.createElement('ul');
     ul.className="station"+station.id;
