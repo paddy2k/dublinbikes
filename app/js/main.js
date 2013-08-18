@@ -86,4 +86,5 @@ Util.ready(function(){
   });
 
   THC.init();
+  mozBanr.init();
 });
