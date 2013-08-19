@@ -156,10 +156,10 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     src: [
-                        '<%= yeoman.dist %>/js/{,*/}*.js',
-                        '<%= yeoman.dist %>/css/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
-                        '<%= yeoman.dist %>/css/fonts/*'
+                        '<%= yeoman.dist %>/js/{,*/}*.js'
+                        ,'<%= yeoman.dist %>/css/{,*/}*.css'
+                        // ,'<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
+                        // ,'<%= yeoman.dist %>/css/fonts/*'
                     ]
                 }
             }
@@ -239,6 +239,7 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,png,txt}',
                         '.htaccess',
+                        '*.webapp',
                         'images/{,*/}*.{webp,gif}',
                         'css/fonts/*'
                     ]
@@ -292,7 +293,7 @@ module.exports = function (grunt) {
               "css/*.css",
               "images/*"
             ],
-            dest: "<%= yeoman.dist %>/manifest.appcache"
+            dest: "<%= yeoman.dist %>/cache.manifest"
           }
         }
     });
